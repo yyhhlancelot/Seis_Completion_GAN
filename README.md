@@ -32,6 +32,20 @@ python 3.5.4 / Tensorflow 1.9.0
 * 判别器采用交叉熵损失。<br>
 * 整体损失由生成器的均方误差和判别器的交叉熵损失构成。<br>
 
+## 实验效果
+原始数据<br>
+![ori.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/ori.jpg)<br>
+<br>
+缺失数据<br>
+![incomplete.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/incomplete.jpg)<br>
+<br>
+重建数据<br>
+![recon.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/recon.jpg)<br>
+<br>
+
+## 升级
+未来考虑对网络结构进行升级，拟使用使用三维地震数据进行训练，构建张量重构网络。三维地震数据的恢复能够更加贴合实际应用场景。
+
 ## 参考文献
 * Goodfellow, Ian J , et al. "Generative Adversarial Nets." International Conference on Neural Information Processing Systems MIT Press, 2014.
 * Chang, J. H. Rick , et al. "One Network to Solve Them All --- Solving Linear Inverse Problems using Deep Projection Models." (2017).
