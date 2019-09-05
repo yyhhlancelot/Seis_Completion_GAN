@@ -1,7 +1,7 @@
 # SeisCompletionGAN
 构建一种对抗生成网络对有缺失的地震二维图像进行重建恢复。
 
-## 环境
+## 代码环境
 python 3.5.4 / Tensorflow 1.9.0
 
 ## 训练集
