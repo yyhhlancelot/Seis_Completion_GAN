@@ -19,9 +19,9 @@ python 3.5.4 / Tensorflow 1.9.0
 * 补全网络未采用池化操作来降低分辨率，只使用带步长的卷积操作来降低图像分辨率，相比池化能够在缺失区域产生不那么模糊的纹理。<br>
 * 补全网络采用均方误差作为生成器的损失。<br>
 * 使用[BatchNormalization](https://blog.csdn.net/yyhhlancelot/article/details/92981855)加速模型的收敛，在一定程度缓解了梯度消失的问题。<br>
-* 激活函数采用[ReLU](https://blog.csdn.net/yyhhlancelot/article/details/82983987)解决了zero-centered的问题，在正区间解决了sigmoid和tanh梯度消失的问题，同时在梯度下降时收敛远快于simoidh和tanh。<br>
+* 激活函数采用[ReLU](https://blog.csdn.net/yyhhlancelot/article/details/100304974)解决了zero-centered的问题，在正区间解决了sigmoid和tanh梯度消失的问题，同时在梯度下降时收敛远快于simoidh和tanh。<br>
 * 补全网络使用了空洞卷积（dilated convolutional layers）。在整个网络结构中这是非常重要的一步，通过对低分辨率的图像使用空洞卷积，可以理解为模型可以更有效地看到更加广阔的区域，可以理解为感受野进一步增大，能够在不通过pooling损失信息的情况下也拥有较大的感受野。<br>
-* 补全网络通过反卷积upsampling还原到原始图片的尺寸。<br>
+* 补全网络通过[反卷积](https://blog.csdn.net/yyhhlancelot/article/details/82983987)upsampling还原到原始图片的尺寸。<br>
 
 ## 判别器/判别网络
 将补全网络输出的图像输入判别网络，判别网络会产生一个概率来判定该图像时真实图像还是通过补全网络产生的图像。判别网络如下<br>
