@@ -12,7 +12,7 @@ python 3.5.4 / Tensorflow 1.9.0
 
 ## 生成器/补全网络
 将预处理完成的数据输入补全网络。补全网络如下<br>
-![com_net.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/com_net.jpg)
+![com_net.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/pics/com_net.jpg)
 * 采用了白化操作——将输入数据分布变换到0均值，单位方差的分布，加速神经网络的收敛。<br>
 * 补全网络采用了一种编码-解码的结构，类似于自编码器，从最初为了之后的处理而降低分辨率，这样的操作可以降低存储空间和计算时间。<br>
 * 补全网络通过反卷积操作可以使图像在最初的降维后恢复原始的分辨率。<br>
@@ -25,7 +25,7 @@ python 3.5.4 / Tensorflow 1.9.0
 
 ## 判别器/判别网络
 将补全网络输出的图像输入判别网络，判别网络会产生一个概率来判定该图像时真实图像还是通过补全网络产生的图像。判别网络如下<br>
-![dis_net.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/dis_net.jpg)
+![dis_net.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/pics/dis_net.jpg)
 
 * 判别器不采用任何池化层，用带有步长的卷积来达到降低分辨率的作用，同时进一步提取特征。<br>
 * 判别器最后sigmoid函数对最后的特征向量生成一个概率，来判定是真实图像还是通过补全网络生成的图像。<br>
@@ -34,11 +34,11 @@ python 3.5.4 / Tensorflow 1.9.0
 
 ## 实验效果
 原始数据<br>
-![ori.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/ori.jpg)<br>
+![ori.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/pics/ori.jpg)<br>
 缺失数据<br>
-![incomplete.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/incomplete.jpg)<br>
+![incomplete.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/pics/incomplete.jpg)<br>
 重建数据<br>
-![recon.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/recon.jpg)<br>
+![recon.jpg](https://github.com/yyhhlancelot/SeisCompletionGAN/blob/master/pics/recon.jpg)<br>
 
 ## 升级
 未来考虑对网络结构进行升级，拟使用使用三维地震数据进行训练，构建张量重构网络。三维地震数据的恢复能够更加贴合实际应用场景。
